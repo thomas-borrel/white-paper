@@ -1,15 +1,12 @@
 # Disclaimer
 
 The information set out in this white paper is of a preliminary nature.
-Consequently, neither the authors nor any of their respective affiliates assume any responsibility that the information set out herein is final or correct and each of the foregoing disclaims,
-to the fullest extent permitted by applicable law, any and all liability whether arising in tort, contract or otherwise in respect of this white paper.
-Neither this white paper nor anything contained herein shall form the basis of or be relied on in connection with or act as an inducement to enter into any contract or commitment whatsoever.
+Consequently, neither the authors nor any of their respective affiliates assume any responsibility that the information set out herein is final or correct and each of the foregoing disclaims, to the fullest extent permitted by applicable law, any and all liability whether arising in tort, contract or otherwise in respect of this whitepaper.
+Neither this whitepaper nor anything contained herein shall form the basis of or be relied on in connection with or act as an inducement to enter into any contract or commitment whatsoever.
 
 Nothing in this white paper constitutes an offer to sell or a solicitation to purchase any tokens discussed herein.
-In any event, were this white paper to be deemed to be such an offer or solicitation, no such offer or solicitation is intended or conveyed by this white paper in any jurisdiction where it is unlawful to do so,
-where such an offer or solicitation would require a license or registration, or where such an offer or solicitation is subject to restrictions.
-In particular, any tokens discussed herein have not been, and, as of the date of issuance of this white paper, are not intended to be, registered under the securities or similar laws of any jurisdiction,
-whether or not such jurisdiction considers such tokens to be a security or similar instrument and may not be offered or sold in any jurisdiction where to do so would constitute a violation of the relevant laws of such jurisdiction.
+In any event, were this white paper to be deemed to be such an offer or solicitation, no such offer or solicitation is intended or conveyed by this white paper in any jurisdiction where it is unlawful to do so, where such an offer or solicitation would require a license or registration, or where such an offer or solicitation is subject to restrictions.
+In particular, any tokens discussed herein have not been, and, as of the date of issuance of this white paper, are not intended to be, registered under the securities or similar laws of any jurisdiction, whether or not such jurisdiction considers such tokens to be a security or similar instrument and may not be offered or sold in any jurisdiction where to do so would constitute a violation of the relevant laws of such jurisdiction.
 
 
 # License
@@ -24,11 +21,11 @@ The source code[^src] of this paper is available under the Creative Commons Attr
 
 The Internet is predominantly composed of open-source projects and has been since its inception.
 Over time, many of these projects have become foundational pieces upon which all future innovation is built.
-And while fortunes have been made from it, open-source is mainly created and maintained without compensation.
+And while fortunes have been made from it, open-source is mainly created and maintained as a public utility.
 
 We believe that the entirety of modern human endeavor has been stunted by relying on the smallest percentage of the world's engineers to choose between a salary or keeping the Internet running.
 Open-source is a labor of love often hindered by a lack of meaningful economic incentives resulting in genuinely worthwhile projects never reaching their potential while others suffer from security issues due to the lack of incentives to maintain software throughout its lifecycle.
-To fully realize our potential, we need a fair remuneration system for the open-source ecosystem that doesn’t fundamentally change how it is built or utilized.
+To fully realize our potential, we need a fair system for the open-source ecosystem that doesn’t fundamentally change how it is built or utilized and honors the efforts of its contributors.
 
 Enterprises often wrap business models around open-source, generating revenue directly from the work of the benevolent developers while also relying on them to fix bugs as issues occur.
 A great example is a recent incident involving a critical security vulnerability in Log4j, a package from the Apache Software Foundation that found its way across many commercial software and services employed by enterprises and governments.
@@ -47,12 +44,12 @@ Sponsorship makes it possible for consumers of open-source to donate to the proj
 However, picture open-source as a tower of bricks where lower layers are long forgotten, but still maintained by dedicated engineers and relied upon by even more developers.
 Only projects at the top of the tower are typically known and receive sponsorship.
 This biased selection leads to essential bricks that hold up the tower attracting no donations, while favorites receive more than they need.
-Bounties allow consumers of projects to propose payment for developers to build specific features, thus only remunerating projects for doing things not necessarily in their best interest.
+Bounties allow consumers of projects to propose payment for developers to build specific features, thus only rewarding projects for doing things not necessarily in their best interest.
 And again, only rewarding favorites.
 
-In this paper, we propose tea — a decentralized system for fairly remunerating open-source developers based on their contributions to the entire ecosystem and enacted through the tea incentive algorithm applied across all entries in the tea registry.
+In this paper, we propose tea — a decentralized system for (i) assigning a measure of impact to every open-source software package relative to the entire ecosystem, (ii) ensuring open-source software packages are well maintained and (iii) fairly rewarding open-source developers based on their contributions to the entire ecosystem and enacted through the tea incentive algorithm applied across all entries in the tea registry.
 
-![Simplified view of the tea steeping rewards system.](img/figure-1.svg)
+![Simplified view of the tea staking rewards system.](img/figure-1.svg)
 
 $\parskip=0pt plus 1pt$
 
@@ -65,7 +62,7 @@ $\parskip=0pt plus 1pt$
 
 A software developer building an application needs four things: a browser, a terminal, an editor, and a package manager.
 Of these four, the package manager is what controls the tooling and frameworks a developer needs to construct their product.
-This layer is where we see the potential to change how open-source is remunerated.
+This layer is where we see the potential to change how open-source is rewarded.
 
 ## The Package Manager
 
@@ -88,17 +85,13 @@ We predict that tea’s combination of tools, information, and rewards will just
 
 Every package manager has its own package registry duplicating the same metadata repeatedly.
 It’s time there was a single, comprehensive and definitive registry designed and governed by the communities that depend on it.
-This decentralized, immutable registry could provide security, stability and prevent
-malevolent intent.
+This decentralized, immutable registry could provide security, stability and prevent malevolent intent.
 
 The Internet runs on tens of thousands of vital open-source components.
 It’s remarkable that thus far, incidents caused by the removal of essential open-source infrastructure have been minimal.
 The most famous was the removal of an NPM left-pad[^5] dependency in 2016, which cascaded into continuous integration and continuous deployment systems leaving developers high and dry for days.
 This event demonstrated that the Internet itself is based on fragile systems of development.
-Other examples involved active or intentional participation from the package maintainers sabotaging their popular packages (See colors.js, faker.js[^6], and node-ipc[^7]),
-or bad actors looking to profit by pretending to help maintain packages and corrupting them to steal, for example, Bitcoin private keys (See event-stream[^8]),
-or malicious packages with intentional misspelling errors, also known as typosquatting,
-in the hope of tricking users into installing them, for example crossenv vs. cross-env NPM packages[^npmjsCrossenv].
+Other examples involved active or intentional participation from the package maintainers sabotaging their popular packages (See colors.js, faker.js[^6], and node-ipc[^7]), or bad actors looking to profit by pretending to help maintain packages and corrupting them to steal, for example, Bitcoin private keys (See event-stream[^8]), or malicious packages with intentional misspelling errors, also known as typosquatting, in the hope of tricking users into installing them, for example crossenv vs. cross-env NPM packages[^npmjsCrossenv].
 
 Software integrity needs to be guaranteed as the industry progresses towards a future where digital assets are part of the software.
 We cannot continue to leave ourselves vulnerable to malicious actors modifying the software.
@@ -122,8 +115,7 @@ A decentralized registry augmented by a reputation system and supported by econo
 Open-source packages deliver a broad range of functionality, some of which may be restricted or unwanted.
 Encryption is an excellent example of that.
 A critical use case for encryption is the support of individuals’ privacy across the globe.
-Encryption, however, can also be used for nefarious purposes (see Phantom Secure, dismantled by law enforcement agencies in March 2018[^11]) or may be compromised to support law enforcement activities (See Operation Ironside (AFP), Operation Greenlight (Europol),
-and Operation Trojan Shield (FBI)[^12] where the FBI operated an “encrypted” communication platform, AN0M, and convinced criminals to use their “encrypted” phones for secure communication).
+Encryption, however, can also be used for nefarious purposes (see Phantom Secure, dismantled by law enforcement agencies in March 2018[^11]) or may be compromised to support law enforcement activities (See Operation Ironside (AFP), Operation Greenlight (Europol), and Operation Trojan Shield (FBI)[^12] where the FBI operated an “encrypted” communication platform, AN0M, and convinced criminals to use their “encrypted” phones for secure communication).
 
 Encryption’s broad applications have made it a perfect use case for open-source software and a great example that any solution that stores packages must be tamper-proof and censorship-resistant.
 tea is a decentralized protocol that does not intend to filter or sanction packages based on their functionality.
@@ -135,7 +127,7 @@ Package maintainers may choose the storage system best suited for their need to 
 
 # Network Participants
 
-tea’s mission is to empower open-source communities and ensure their contributors are supported as they create the tools that build the Internet.
+tea’s mission is to enhance the sustainability and integrity of the software supply chain by allowing open-source developers to capture the value they create.
 In this white paper, we distinguish participants through their contributions.
 Some may contribute code or verify contributed code.
 Others may provide economic value to support developers and their reputation.
